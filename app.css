@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url('images/cropped-header22.jpg');
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    font-size: 3em;
+}
+
+main {
+    padding: 5% 20%;
+    background-color: lightgrey;
+}
+
+#page-top {
+    margin: 50px;
+}
+
+.main-text { 
+    line-height: 1.8;
+    text-align: center;
+    font-weight: 600;
+    font-size: large;
+}
+main h1 {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.mike-info {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.people-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two Fractional Columns */
+    grid-template-rows: 150px 150px; /* Two Equal Rows */
+    gap: 15px; /* Space between grid items */
+}
+
+.people-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.people-name {
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Navigation bar for large screens (horizontal links) */
+nav#nav-bar {
+    background-color: #444;
+    overflow: hidden;
+    text-align: center;
+}
+
+nav#nav-bar a {
+    display: inline-block;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+nav#nav-bar a:hover {
+    background-color: #575757;
+}
+
+/* Sidebar for small screens */
+.sidebar {
+    height: 100%; /* Full-height */
+    width: 0; /* Initial width set to 0 */
+    position: fixed; /* Stay in place */
+    top: 0;
+    left: 0;
+    background-color: #333; /* Dark background */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* Smooth transition for opening */
+    padding-top: 60px; /* Padding from the top */
+    z-index: 1000; /* On top of other elements */
+}
+
+/* Sidebar links */
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+/* Overlay (dark background) */
+.overlay {
+    position: fixed;
+    display: none; /* Hidden by default */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 999; /* Behind the sidebar, but above everything else */
+    opacity: 0;
+    transition: opacity 0.25s ease; /* Smooth Fade In */
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Hamburger icon */
+.icon {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    background-color: #333;
+    position: fixed;
+    top: 1%;
+    left: 15px;
+    z-index: 1001;
+    display: none; /* Hidden by default */
+    transition: all 0.6s ease; /* Smooth Transitioning */
+}
+
+.icon.close {
+    font-size: 30px;
+}
+
+/* Media query for small screens (mobile view) */
+@media screen and (max-width: 600px) {
+    nav#nav-bar {
+        display: none; /* Hide the horizontal nav */
+    }
+
+    .icon {
+        display: block; /* Show the hamburger icon */
+    }
+
+    .sidebar a {
+        font-size: 1em; /* Smaller font size for mobile */
+    }
+}
