@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <header>Mauk Lab</header>
+
+    <!--Nav Bar For Wide Screen-->
+    <nav id="nav-bar">
+        <a href="home.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="people.html">People</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!--Hamburger Icon for Narrow Screen-->
+    <span id="menu-icon" class="icon" onclick="toggleMenu()">&#9776;</span>
+
+    <!-- Sidebar Menu for Small Screens -->
+    <div id="sidebar" class="sidebar">
+        <a href="home.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="people.html">People</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Overlay (Dark background) -->
+    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+    <main>
+        <div class="main-text">
+            <h2 style="text-align: center;">Email</h2>
+            <a href="mailto:mauk@utexas.edu">mauk@utexas.edu</a>
+        </div>
+        
+        
+        <div> 
+            <h2 style="text-align: center;">Address</h2>
+            <p class="main-text">Department of Neuroscience, Center for Learning & Memory <br>
+            The University of Texas at Austin <br>
+            100 E. 24th Street <br>
+            Austin, TX 78712</p></div>
+        
+
+
+
+    <!--For Dynamic Nav Bar-->
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById("sidebar");
+            var overlay = document.getElementById("overlay");
+            var menuIcon = document.getElementById("menu-icon");
+           
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+                overlay.classList.remove("active"); // Remove active class
+                setTimeout(function() {
+                    overlay.style.display = "none"; // Remove display
+                }, 250) // Match delay to transition (250ms)
+                menuIcon.innerHTML = "&#9776;"; // Set to Hamburger Icon
+                menuIcon.classList.remove("close") // Remove close class
+            } else {
+                sidebar.style.width = "250px";
+                overlay.style.display = "block"; // Display overlay w 0 opacity
+                setTimeout(function() {
+                    overlay.classList.add("active"); // activate fade in class
+                }, 10) // Tiny delay to make sure display is shown first
+                menuIcon.innerHTML = "&times;"; // Set to Close Button
+                menuIcon.classList.add("close") // Add close icon class to modify element
+            }
+        }
+    </script>
+</body>
+</html>
