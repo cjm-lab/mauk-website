@@ -1,7 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 header {
@@ -24,7 +29,7 @@ main {
 .main-text { 
     line-height: 1.8;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     font-size: large;
 }
 main h1 {
@@ -32,27 +37,80 @@ main h1 {
     padding-bottom: 15px;
 }
 
-.mike-info {
+.mike-container {
     display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.mike-info p {
+    margin-top: 10px; /* Add some space between the image and the text */
+    text-align: center; /* Center the text */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    
+}
+
+.mike-photo {
+    max-width: 100%;
+    height: auto;
+    width: 80%;
+    margin: 0 20px 0 5px;
+    border: solid 4px lightgrey;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 1px #505050;
+    
+}
+
+p {
+    text-align: justify;
+    margin-top: 20px; /* Add space between the image and text */
 }
 
 .people-container {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two Fractional Columns */
-    grid-template-rows: 150px 150px; /* Two Equal Rows */
-    gap: 15px; /* Space between grid items */
+    grid-template-rows: 1fr 1fr; /* Two Equal Rows */
+    gap: 55px; /* Space between grid items */
+    padding: 20px;
+
 }
 
 .people-cell {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
+.people-box{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .people-name {
-    align-items: center;
+    margin: 10px 0; /* Add space between headers and other elements */
     font-weight: bold;
+}
+
+.people-photo {
+    max-width: 100%;
+    height: auto;
+    width: 30%;
+    margin: 0 20px 0 5px;
+    border: solid 4px lightgrey;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 1px #505050;
 }
 
 /* Navigation bar for large screens (horizontal links) */
@@ -72,6 +130,8 @@ nav#nav-bar a {
 nav#nav-bar a:hover {
     background-color: #575757;
 }
+
+
 
 /* Sidebar for small screens */
 .sidebar {
@@ -99,6 +159,13 @@ nav#nav-bar a:hover {
 
 .sidebar a:hover {
     background-color: #575757;
+}
+
+title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
 }
 
 /* Overlay (dark background) */
