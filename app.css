@@ -1,12 +1,42 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body {
+html,body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
+    height: 100%;
+
+    /*added for debugging*/
+    /*display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;*/
+    background: lightgray;
+}
+
+.bg-image {
+    --bg-img: url('images/blue minimal transparent edited.png');
+    --bg-img-opacity: 0.3;
+    position: relative;
+    isolation: isolate;
+}
+
+.bg-image::after {
+    content: '';
+    position:absolute;
+    z-index:-1;
+    inset:0;
+    opacity: var(--bg-img-opacity);
+
+    background-image: var(--bg-img);
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 header {
@@ -18,12 +48,12 @@ header {
 }
 
 main {
-    padding: 5% 20%;
+    padding: 0% 20%;
     background-color: lightgrey;
 }
 
 #page-top {
-    margin: 50px;
+    margin: 0px;
 }
 
 .main-text { 
@@ -31,10 +61,30 @@ main {
     text-align: justify;
     font-weight: 500;
     font-size: large;
+    
 }
+
+.bottom-text {
+    line-height: 1.8;
+    text-align: justify;
+    font-weight: 500;
+    font-size: large;
+    margin-bottom: 0%;
+    padding-bottom: 60px;
+}
+
+
 main h1 {
     text-align: center;
-    padding-bottom: 15px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+main h2 {
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 .mike-container {
@@ -60,7 +110,7 @@ main h1 {
 .mike-photo {
     max-width: 100%;
     height: auto;
-    width: 80%;
+    width: 70%;
     margin: 0 20px 0 5px;
     border: solid 4px lightgrey;
     border-radius: 50%;
