@@ -20,7 +20,7 @@ html,body {
 }
 
 .bg-image {
-    --bg-img: url('images/blue minimal transparent edited.png');
+    --bg-img: url('images/blue minimal transparent.png');
     --bg-img-opacity: 0.3;
     position: relative;
     isolation: isolate;
@@ -34,9 +34,10 @@ html,body {
     opacity: var(--bg-img-opacity);
 
     background-image: var(--bg-img);
-    background-size: contain;
-    background-position: center;
+    background-size: contain; /*skethcy*/
+    background-position: center center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 header {
