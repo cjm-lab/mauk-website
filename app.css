@@ -110,8 +110,8 @@ main h2 {
 
 .mike-photo {
     max-width: 100%;
-    height: auto;
-    width: 70%;
+    height: 50%;
+    width: 50%;
     margin: 0 20px 0 5px;
     border: solid 4px lightgrey;
     border-radius: 50%;
